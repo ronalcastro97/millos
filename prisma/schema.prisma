@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Team {
+  id       Int    @id @default(autoincrement())
+  name     String
+  logo     String @default("")
+  pj       Int    @default(0)
+  gf       Int    @default(0)
+  gc       Int    @default(0)
+  points   Int    @default(0)
+  position Int    @default(0)
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String
+}
