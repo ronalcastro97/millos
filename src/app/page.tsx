@@ -67,6 +67,24 @@ export default async function HomePage() {
   return (
     <main className="min-h-screen bg-[#030912] overflow-hidden">
 
+      {/* Botón admin fijo — esquina superior derecha */}
+      <Link
+        href="/admin/login"
+        className="fixed top-4 right-4 z-50 flex items-center gap-2 font-heading font-700 text-xs uppercase tracking-widest px-4 py-2 rounded-xl transition-all hover:scale-105"
+        style={{
+          background: "rgba(6,15,34,0.85)",
+          backdropFilter: "blur(12px)",
+          border: "1px solid rgba(245,196,0,0.3)",
+          color: "#f5c400",
+          boxShadow: "0 0 20px rgba(245,196,0,0.1), 0 4px 16px rgba(0,0,0,0.4)",
+        }}
+      >
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+        </svg>
+        Admin
+      </Link>
+
       {/* ═══════════════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════════════ */}
@@ -313,11 +331,6 @@ export default async function HomePage() {
           </span>{" "}
           que nos define
         </p>
-        <div className="mt-8">
-          <Link href="/admin/login" className="admin-ghost-link font-heading text-[10px] tracking-[0.3em] uppercase">
-            ◆ Admin
-          </Link>
-        </div>
       </footer>
     </main>
   );
